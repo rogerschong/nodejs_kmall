@@ -2,6 +2,8 @@
 require("express-async-errors")
 require("./db")
 
+let config = require("./config");
+
 let express = require("express");
 //处理日志
 let morgan = require("morgan");
@@ -20,5 +22,6 @@ app.use((err, req, res, next) => {
     //写出失败的响应
     res.fail(err)
 })
+console.log(config);
 
-app.listen(8000)
+app.listen(config.PORT);

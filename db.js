@@ -1,7 +1,7 @@
 let mongooes = require('mongoose')
 let config = require("./config");
 
-mongooes.connect("mongodb://localhost/product-manager", {useNewUrlParser: true})
+mongooes.connect(`mongodb://localhost/${config.DB}`, {useNewUrlParser: true})
 let connection = mongooes.connection
 
 connection.on("error", err => {

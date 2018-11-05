@@ -16,7 +16,7 @@ app.use(require('./middleware/response_md'))
 app.use(express.json())
 
 //挂载自定义的router
-
+app.use("/user", require("./router/router"))
 //处理全局异常中间件
 app.use((err, req, res, next) => {
     //写出失败的响应
